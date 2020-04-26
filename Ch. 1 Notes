@@ -1,1 +1,43 @@
----- TCP/IP Model ----
+TCP/IP Model
+  5. Application - HTTP, POP3, SMTP
+  4. Transport - TCP, UDP
+  3. Network - IP, ICMP 
+  2. Data Link - Ethernet, 802.11
+  1. Physical
+
+Data-Link and Physical
+  When Sending:
+    Encapsulates IP packet w/ Ethernet header and trailer
+      Creates Frame, and sends over Ethernet
+  When Receiving:
+    De-Encapsulates IP packet from Ethernet frame 
+  
+Same-layer interaction vs Adjacent-layer interaction
+  Same-layer interaction example:
+    TCP error handling between different computers (same layer)
+  Adjacent-layer interaction example:
+    HTTP wants error recovery, so it uses TCP to perform error recovery
+
+Encapsulation
+  When Sending:
+    1. Create and encapsulate application header (if applicable, eg. HTTP 200)
+    2. --> to Transport: add TCP or UDP header (Segment)
+    3. --> to Network: add IP header (Packet)
+    4. --> to Data Link: add data-link header and trailer (Frame)
+    5. Transmit the bits
+
+OSI Model
+  7. Application
+  6. Presentation
+  5. Session
+  4. Transport
+  3. Network
+  2. Data Link
+  1. Physical
+
+Encapsulation in OSI Model
+  Refer to Layer + PDU (protocol data unit)
+  For example: L2PDU = Frame, L3PDU = Packet, L4PDU = Segment
+
+
+
